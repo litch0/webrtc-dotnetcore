@@ -171,6 +171,11 @@ $(sendFileBtn).click(function () {
 
 function grabWebCamVideo() {
     console.log('Getting user media (video) ...');
+    navigator.getUserMedia({audio: true, video:true}, function(s){
+        console.log("Have support")
+    }, function(e){
+        console.log('error');
+    })
     navigator.mediaDevices.getUserMedia({
         audio: true,
         video: true
